@@ -1,68 +1,106 @@
 body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-  }
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(-45deg, #e73c7e, #cc00cc, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
 
+/* Existing navbar styles */
 .navbar {
-    position: fixed;
-    background-color: #333;
-    width: 100%;
-    top: 0;
-    left: 0;
-}
-
-.navbar a {
-    float: right;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px; 
-}
-.navbar i {
-    float: right;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 30px; 
-    height: 100%;
+  position: fixed;
+  background-color: #333;
+  width: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  color: white;
 }
 
 .navbar h2 {
-    font: Helvetica;
-    color:#f2f2f2;
-    float:left;
-    padding-left: 10px;
-    text-decoration: none;
-    font-size: 20px; 
-
+  margin: 0;
+  font: Helvetica;
+  color: #f2f2f2;
+  float: left;
+  padding-left: 10px;
+  text-decoration: none;
+  font-size: 20px;
 }
 
-.navbar a:hover {
-    background-color: #ddd;
-    color: black;
-  }
-
-.navbar a.active {
-    background-color: #04AA6D;
-    color: white; 
+.navbar i {
+  margin-left: 10px;
+  float: right;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 30px;
+  height: 100%;
 }
 
-.navbar i:hover {
-    background-color: #ddd;
-    color: black;
-  }
+.navbar a {
+  float: right;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 0px 0px;
+  text-decoration: none;
+  font-size: 17px;
+}
 
-.navbar i.active {
-    background-color: #04AA6D;
-    color: white; 
+.navbar a:hover, .navbar i:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.navbar a.active, .navbar i.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
+
+
+/* New styles for the container, text, and button */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Full viewport height */
+  text-align: center;
+}
+
+.code-text {
+  font-size: 72px; /* Increased font size */
+  font-weight: bold;
+  margin-bottom: 20px; /* Space between text and button */
+  color: #333;
+}
+
+.projects-button {
+  background-color: #333; /* Same color as navbar */
+  color: white; /* White text */
+  padding: 10px 20px; /* Padding for the button */
+  display: inline-block; /* Display the buttons side by side */
+  border: none; /* Remove default border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  font-size: 16px; /* Font size */
+  transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.projects-button:hover {
+  background-color: #555; /* Slightly lighter color on hover */
 }
 
 .myName {
   height: 50%;
   justify-content: center;
-  align-items:last baseline;
+  align-items: last baseline;
   display: flex;
 }
 
@@ -70,7 +108,6 @@ body {
   text-align: center;
   font-size: 100px;
   color: white;
-  text-align: center;
 }
 
 .icons {
@@ -81,77 +118,59 @@ body {
 }
 
 .hero {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
+.hero img {
+  position: absolute;
+  top: 200px;
+  left: 100px;
+  height: auto;
+  width: 9rem;
+}
 
-  .hero img {
-    
-    position: absolute;
-    top: 200px;
-    left: 100px;
-    height: auto;
-    width: 9rem;
-  }
+.photos img {
+  height: 9rem;
+  width: auto;
+}
 
-  .photos img {
+.resume-img {
+  height: 12rem;
+  width: auto;
+}
 
-    
-    height: 9rem;
-    width: auto;
-  }
+.photo-container button {
+  position: absolute;
+  top: 10px;
+  left: auto;
+  text-align: left;
+}
 
-  .resume-img {
-    height: 12rem;
-    width: auto;
-  }
+div.scroll-container {
+  position: absolute;
+  top: 75px;
+  left: 0px;
+  background-color: #333;
+  overflow: auto;
+  white-space: nowrap;
+  padding: 10px;
+  visibility: hidden;
+}
 
-  
+div.scroll-container img {
+  padding: 10px;
+  height: 350px;
+}
 
-  html, body {
-    width: 100%;
-    height:100%;
+@keyframes gradient {
+  0% {
+      background-position: 0% 50%;
   }
-  
-  body {
-      /*background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);*/
-      background: linear-gradient(-45deg, #e73c7e, #cc00cc, #23a6d5, #23d5ab);
-      background-size: 400% 400%;
-      animation: gradient 15s ease infinite;
+  50% {
+      background-position: 100% 50%;
   }
-  
-  @keyframes gradient {
-      0% {
-          background-position: 0% 50%;
-      }
-      50% {
-          background-position: 100% 50%;
-      }
-      100% {
-          background-position: 0% 50%;
-      }
+  100% {
+      background-position: 0% 50%;
   }
-
-  .photo-container button {
-    position: absolute;
-    top: 10px;
-    left: auto;
-    text-align: left;   
-  }
-
-  div.scroll-container {
-    position: absolute;
-    top: 75px;
-    left: 0px;
-    background-color: #333;
-    overflow: auto;
-    white-space: nowrap;
-    padding: 10px;
-    visibility: hidden;
-  }
-  
-  div.scroll-container img {
-    padding: 10px;
-    height: 350px;
-  }
+}
