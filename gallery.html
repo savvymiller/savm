@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <link rel="stylesheet" href="galstyle.css">
+</head>
+<body>
+    <div class="navbar">
+        <h2>Gallery</h2>
+        <a href="index.html" class="back-button">&#8592;</a>
+    </div>
+    <div class="projects-container" id="projects-container">
+        <!-- Image cards will be populated here by JavaScript -->
+    </div>
+
+    <script>
+        // Array of image filenames
+        const images = [
+            { src: 'gallery/IMG_0897.jpg', date: 'Smokey Mountians' },
+            { src: 'gallery/IMG_0898.jpg', date: 'Smokey Mountains' },
+            { src: 'gallery/IMG_0907.jpg', date: 'Smokey Mountains' },
+            { src: 'gallery/IMG_0651.jpg', date: 'Skoom' },
+            { src: 'gallery/IMG_0662.jpg', date: 'Skoom' },
+            { src: 'gallery/IMG_0666.jpg', date: 'Skoom' },
+            { src: 'gallery/IMG_0450.jpg', date: 'Mom Day' },
+            { src: 'gallery/IMG_0495.jpg', date: 'Wisconsin' },
+            { src: 'gallery/IMG_0542.jpg', date: 'Basement' },
+            { src: 'gallery/IMG_0447.jpg', date: 'Toga Party' },
+            { src: 'gallery/IMG_0448.jpg', date: 'Toga Party' },
+            { src: 'gallery/IMG_0544.jpg', date: 'Final 4' },
+            { src: 'gallery/Laudy1.png', date: 'Ft. Lauderdale' },
+            { src: 'gallery/Laudy2.png', date: 'Ft. Lauderdale' },
+            { src: 'gallery/Laudy3.png', date: 'Ft. Lauderdale' },
+            { src: 'gallery/image4.jpg', date: 'Ft. Lauderdale' },
+            { src: 'gallery/IMG_0403.jpg', date: 'Ft. Lauderdale' },
+            { src: 'gallery/IMG_0391.jpg', date: 'Ft. Lauderdale' },
+            { src: 'gallery/IMG_0318.jpg', date: 'Ohio State' },
+            { src: 'gallery/IMG_0551.jpg', date: 'Third Floor Deck' },
+            { src: 'gallery/IMG_2185.jpg', date: 'No Where Indiana' },
+            { src: 'gallery/IMG_1958.jpg', date: 'Armstrong Hall of Eng.' },
+            { src: 'gallery/IMG_1962.jpg', date: '536 Vine' },
+            // Add more image objects as needed
+        ];
+
+        // Get the container element
+        const container = document.getElementById('projects-container');
+
+        // Loop through the images array and create image cards
+        images.forEach(image => {
+            const card = document.createElement('div');
+            card.className = 'project-card';
+
+            const img = document.createElement('img');
+            img.src = image.src;
+            img.alt = image.date;
+
+            const date = document.createElement('span');
+            date.className = 'date';
+            date.textContent = image.date;
+
+            card.appendChild(img);
+            card.appendChild(date);
+            container.appendChild(card);
+        });
+    </script>
+</body>
+</html>
